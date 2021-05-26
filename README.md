@@ -104,3 +104,7 @@ styles/globale.css // Le css
 NextJs : [nextjs.org](https://nextjs.org/)
 
 API : [jsonplaceholder](http://jsonplaceholder.typicode.com/)
+
+<hr />
+
+[ - DoctorPok ]
