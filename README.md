@@ -4,6 +4,10 @@
 
 # Test-Dernier-Cri
 
+Petite application qui vous permet d'interroger une API afin de récupérer (ici des posts / articles) pour les afficher sur un site.
+
+(Si vous rencontrez un problème avec ce repo, ouvrez une issue et je vous aiderez.)
+
 ## Lancement
 
 Tout d'abord regardez bien que vous avez téléchargé l'entièreté du projet !
