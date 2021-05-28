@@ -9,19 +9,17 @@ export default function Home({ posts }) {
       </Head>
       <main class="container">
         <ul>
-          {posts &&
-            posts.lenght > 0 &&
-            posts.map((post) => (
-              <li>
-                <Link href={`/articles/${post.id}`}>
-                  <a>
-                    <div class="content">
-                      <h3>{post.status}</h3>
-                    </div>
-                  </a>
-                </Link>
-              </li>
-            ))}
+          {posts.map((post) => (
+            <li>
+              <Link href={`/articles/${post.id}`}>
+                <a>
+                  <div class="content">
+                    <h3>{post.title}</h3>
+                  </div>
+                </a>
+              </Link>
+            </li>
+          ))}
         </ul>
       </main>
     </>
@@ -30,7 +28,7 @@ export default function Home({ posts }) {
 
 export async function getStaticProps() {
   const posts = await fetch(
-    "https://newsapi.org/v2/everything?q=tesla&from=2021-04-27&sortBy=publishedAt&apiKey=YOURAPIKEY"
+    "http://jsonplaceholder.typicode.com/posts?_limit=10"
   ).then((r) => r.json());
   return {
     props: {
