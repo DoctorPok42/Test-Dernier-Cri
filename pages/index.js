@@ -14,7 +14,7 @@ export default function Home({ articles }) {
             Status : <span>{articles.status}</span>
           </h2>
           <h2>
-            Sujet : <span>Covid</span>
+            Sujet : <span>{query}</span>
           </h2>
           <h2>
             Langue : <span>Français</span>
@@ -44,7 +44,7 @@ export default function Home({ articles }) {
 
 export async function getStaticProps() {
   const articles = await fetch(
-    `https://newsapi.org/v2/top-headlines?q=${query}&from=2021-05-29&to=2021-05-29&sortBy=popularity&apiKey=${APIKEY}&pageSize=12&language=fr`
+    `https://newsapi.org/v2/top-headlines?q=${query}&from=2021-05-29&to=2021-05-29&sortBy=popularity&apiKey=${APIKEY}&pageSize=20&language=fr`
   ).then((r) => r.json());
   return {
     props: {
