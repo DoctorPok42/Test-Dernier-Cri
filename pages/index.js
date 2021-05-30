@@ -20,7 +20,7 @@ export default function Home({ articles }) {
             Langue : <span>Français</span>
           </h2>
           <h2>
-            TotalResults : <span>{articles.totalResults}</span>
+            Résultats Total : <span>{articles.totalResults}</span>
           </h2>
         </div>
         <ul>
