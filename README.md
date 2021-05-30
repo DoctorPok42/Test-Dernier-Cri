@@ -28,15 +28,15 @@ Puis pour voir le résultat vous pouvez vous rendre dans votre navigateur et tap
 
 ## Détails
 
-Dans le fichier `pages/index.js` on fait une requête API à ce site [jsonplaceholder](http://jsonplaceholder.typicode.com/) pour récupérer des `posts` avec une limite de 10.
+Dans le fichier `pages/index.js` on fait une requête API à ce site [newsapi](https://newsapi.org/) pour récupérer des `articles` avec une limite de 10.
 ```Js
 export async function getStaticProps() {
-  const posts = await fetch(
-    "http://jsonplaceholder.typicode.com/posts?_limit=10"
+  const articles = await fetch(
+    `https://newsapi.org/v2/top-headlines?q=${query}&from=2021-05-29&to=2021-05-29&sortBy=popularity&apiKey=${APIKEY}&pageSize=12&language=fr`
   ).then((r) => r.json());
   return {
     props: {
-      posts,
+      articles,
     },
   };
 }
@@ -44,13 +44,9 @@ export async function getStaticProps() {
 ```
 On va ensuite faire un
 ```Js
-{posts.map((post) => ( ... ))}
+{articles.articles.map((articles) => ( ... ))}
 ```
-Pour charger tous les posts et pouvoir ainsi faire un
-```Js
-<h2>{post.title}</h2>
-```
-(pour afficher le titre de chaque articles / posts)
+Pour charger tous les articles et pouvoir ainsi les afficher sur notre page d'accueil.
 
 <br /><br/>
 
@@ -99,15 +95,16 @@ Et pour finir, pour qu'on est une bonne navigation on rajoute un bouton qui redi
 ## Fichiers Important
 ```Js
 pages/index.js // La page d'accueil
+config.js // le fichier contenant la domaine de recherche ainsi que l'APIKEY
 pages/articles/[id].js // La page pour chaque article
-styles/globale.css // Le css
+styles/globale.scss // Le scss
 ```
 
 ## Sources
 
 NextJs : [nextjs.org](https://nextjs.org/)
 
-API : [jsonplaceholder](http://jsonplaceholder.typicode.com/)
+API : [newsapi](https://newsapi.org/)
 
 <hr />
 
