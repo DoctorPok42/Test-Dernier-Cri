@@ -2,7 +2,7 @@
   <img src="https://raw.githubusercontent.com/DoctorPok42/Test-Dernier-Cri/main/public/favicon.ico">
 </div>
 
-# Test-Dernier-Cri
+# Test-Dernier-Cri [![CodeFactor](https://www.codefactor.io/repository/github/doctorpok42/test-dernier-cri/badge)](https://www.codefactor.io/repository/github/doctorpok42/test-dernier-cri)
 
 Petite application qui vous permet d'interroger une API afin de récupérer (ici des posts / articles) pour les afficher sur un site.
 
