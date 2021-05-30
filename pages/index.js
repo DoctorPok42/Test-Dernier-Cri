@@ -1,6 +1,6 @@
 import Head from "next/head";
 import Link from "next/link";
-import { query, APIKEY } from "../config";
+import { query, APIKEY, lang } from "../config";
 
 export default function Home({ articles }) {
   return (
@@ -17,7 +17,7 @@ export default function Home({ articles }) {
             Sujet : <span>{query}</span>
           </h2>
           <h2>
-            Langue : <span>Français</span>
+            Langue : <span>{lang}</span>
           </h2>
           <h2>
             Résultats Total : <span>{articles.totalResults}</span>
@@ -44,7 +44,7 @@ export default function Home({ articles }) {
 
 export async function getStaticProps() {
   const articles = await fetch(
-    `https://newsapi.org/v2/top-headlines?q=${query}&from=2021-05-29&to=2021-05-29&sortBy=popularity&apiKey=${APIKEY}&pageSize=20&language=fr`
+    `https://newsapi.org/v2/top-headlines?q=${query}&from=2021-05-29&to=2021-05-29&sortBy=popularity&apiKey=${APIKEY}&pageSize=20&language=${lang}`
   ).then((r) => r.json());
   return {
     props: {
