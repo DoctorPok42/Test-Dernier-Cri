@@ -12,9 +12,9 @@ Petite application qui vous permet d'interroger une API afin de récupérer (ici
 
 ## Lancement
 
-Tout d'abord regardez bien que vous avez téléchargé l'entièreté du projet !
+Tout d'abord assurez vous bien que vous avez téléchargé l'entièreté du projet !
 
-Ensuite ouvrez un terminal à la racine du projet et commencer par installer les dépendance
+Ensuite ouvrez un terminal à la racine du projet et commencer par installer les dépendances
 ```
 npm i
 ```
